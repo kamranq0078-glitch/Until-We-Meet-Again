@@ -1,0 +1,14 @@
+{
+  "_comment": "Fill in what only you or the family know. If left empty (''), the corresponding element will not render at all. No placeholder text will ever show.",
+  "name": "Dadyy",
+  "fullName": "",
+  "years": "",
+  "familyWords": "",
+  "showKamranQuote": true,
+  "kamranQuote": "A proud man. A life lived well.",
+  "audio": {
+    "enabled": false,
+    "src": "",
+    "label": "Play recitation"
+  }
+}

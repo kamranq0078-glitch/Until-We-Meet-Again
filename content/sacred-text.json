@@ -1,0 +1,98 @@
+{
+  "chapter1_opening": {
+    "istirja": {
+      "arabic": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+      "translation": "Indeed we belong to Allah, and indeed to Him we will return.",
+      "reference": "Surah Al-Baqarah 2:156"
+    }
+  },
+  "chapter3_remains": {
+    "hadith": {
+      "arabic": "إِذَا مَاتَ الْإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ إِلَّا مِنْ ثَلَاثَةٍ: إِلَّا مِنْ صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ",
+      "translation": "When a person dies, his deeds come to an end except for three: ongoing charity, knowledge from which people benefit, or a righteous child who prays for him.",
+      "reference": "Sahih Muslim 1631"
+    },
+    "lanterns": [
+      {
+        "id": "charity",
+        "title": "A lantern for ongoing charity",
+        "arabicTerm": "صَدَقَة جَارِيَة",
+        "transliteration": "sadaqah jariyah",
+        "detail": "Every act of good done in his name continues to reach him."
+      },
+      {
+        "id": "knowledge",
+        "title": "A lantern for knowledge that benefits others",
+        "arabicTerm": "عِلْمٌ يُنْتَفَعُ بِهِ",
+        "transliteration": "'ilm yuntafa'u bihi",
+        "detail": "Every person he taught, guided, or encouraged leaves light behind."
+      },
+      {
+        "id": "child",
+        "title": "A lantern for a righteous child who prays for him",
+        "arabicTerm": "وَلَدٌ صَالِحٌ يَدْعُو لَهُ",
+        "transliteration": "walad salih yad'u lahu",
+        "detail": "Your du'a is his enduring light. Whenever you pray for him, it reaches him."
+      }
+    ]
+  },
+  "chapter4_sabr": {
+    "title": "Sabr",
+    "breathingCue": "breathe with the light",
+    "verses": [
+      {
+        "id": "baqarah-153",
+        "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+        "translation": "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient.",
+        "reference": "Surah Al-Baqarah 2:153"
+      },
+      {
+        "id": "baqarah-155-156",
+        "arabic": "وَلَنَبْلُوَنَّكُم بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِّنَ الْأَمْوَالِ وَالْأَنفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ ۝ الَّذِينَ إِذَا أَصَابَتْهُم مُّصِيبَةٌ قَالُوا إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+        "translation": "And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient, Who, when disaster strikes them, say, \"Indeed we belong to Allah, and indeed to Him we will return.\"",
+        "reference": "Surah Al-Baqarah 2:155–156"
+      },
+      {
+        "id": "rad-28",
+        "arabic": "الَّذِينَ آمَنُوا وَتَطْمَئِنُّ قُلُوبُهُم بِذِكْرِ اللَّهِ ۗ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+        "translation": "Those who have believed and whose hearts are assured by the remembrance of Allah. Unquestionably, by the remembrance of Allah hearts are assured.",
+        "reference": "Surah Ar-Ra'd 13:28"
+      },
+      {
+        "id": "sharh-5-6",
+        "arabic": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+        "translation": "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease.",
+        "reference": "Surah Ash-Sharh 94:5–6"
+      },
+      {
+        "id": "prophet-ibrahim",
+        "arabic": "إِنَّ الْعَيْنَ تَدْمَعُ، وَالْقَلْبَ يَحْزَنُ، وَلَا نَقُولُ إِلَّا مَا يَرْضَى رَبُّنَا، وَإِنَّا بِفِرَاقِكَ يَا إِبْرَاهِيمُ لَمَحْزُونُونَ",
+        "translation": "The eyes shed tears and the heart is grieved, and we say only what pleases our Lord. O Ibrahim, we are truly grieved by your departure.",
+        "reference": "Sahih al-Bukhari 1303"
+      }
+    ]
+  },
+  "chapter5_dua": {
+    "forDeceased": {
+      "arabic": "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ",
+      "transliteration": "Allahumma-ghfir lahu warhamhu wa 'afihi wa'fu 'anhu.",
+      "translation": "O Allah, forgive him, have mercy on him, give him well-being and pardon him.",
+      "reference": "Sahih Muslim 963"
+    },
+    "forBereaved": {
+      "arabic": "إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ، اللَّهُمَّ أْجُرْنِي فِي مُصِيبَتِي وَأَخْلِفْ لِي خَيْرًا مِنْهَا",
+      "transliteration": "Inna lillahi wa inna ilayhi raji'un. Allahumma'jurni fi musibati wakhluf li khayran minha.",
+      "translation": "Indeed we belong to Allah, and indeed to Him we will return. O Allah, reward me in my affliction and replace it with something better.",
+      "reference": "Sahih Muslim 918"
+    }
+  },
+  "chapter6_dawn": {
+    "reassuredSoul": {
+      "arabic": "يَا أَيَّتُهَا النَّفْسُ الْمُطْمَئِنَّةُ ارْجِعِي إِلَىٰ رَبِّكِ رَاضِيَةً مَّرْضِيَّةً",
+      "translation": "\"O reassured soul, return to your Lord, well-pleased and pleasing [to Him].\"",
+      "reference": "Surah Al-Fajr 89:27–28"
+    },
+    "closingDuaTemplate": "We ask Allah to grant {name} Jannat al-Firdaus, and to grant his family patience and ease. Ameen.",
+    "signature": "— Kamran, with all of you in my du'as."
+  }
+}

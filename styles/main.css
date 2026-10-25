@@ -1,0 +1,1072 @@
+/* ==========================================================================
+   A Light For Dadyy — Main Stylesheet
+   Respectful, serene, contemplative Islamic remembrance aesthetic.
+   Silent by default. No sudden movements. Generous spacing for sacred text.
+   ========================================================================== */
+
+:root {
+  /* Core Color Palette */
+  --bg-darkest: #04080a;
+  --bg-night: #071013;
+  --bg-night-surface: rgba(10, 22, 26, 0.75);
+  --bg-night-surface-strong: rgba(14, 28, 33, 0.9);
+  --border-subtle: rgba(230, 184, 92, 0.18);
+  --border-gold: rgba(230, 184, 92, 0.4);
+
+  /* Warm Lantern Gold */
+  --gold-glow: rgba(230, 184, 92, 0.28);
+  --gold-glow-soft: rgba(230, 184, 92, 0.12);
+  --gold-bright: #ffdf94;
+  --gold-primary: #e6b85c;
+  --gold-soft: #cbb06d;
+  --gold-deep: #8f6d2b;
+  --gold-dim: #5c471c;
+
+  /* Text Colors */
+  --text-primary: #f5f1e6;       /* Soft warm ivory */
+  --text-secondary: #cec7b5;     /* Gentle warm sand */
+  --text-muted: #959c94;         /* Restful slate sage */
+  --text-reference: #828a83;     /* Muted reference tone */
+
+  /* Dawn Colors for Chapter 6 */
+  --dawn-sky-indigo: #090e1a;
+  --dawn-sky-violet: #1c1c2e;
+  --dawn-sky-mauve: #45343d;
+  --dawn-sky-amber: #b88652;
+  --dawn-sky-gold: #f4d9a6;
+
+  /* Typography */
+  --font-arabic: 'Amiri', 'Noto Naskh Arabic', 'Scheherazade New', 'Geeza Pro', 'Traditional Arabic', serif;
+  --font-latin: 'Cormorant Garamond', 'Cormorant', Garamond, 'Baskerville', 'Times New Roman', serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Transitions */
+  --transition-slow: 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-medium: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-fast: 0.3s ease;
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-darkest);
+  color: var(--text-primary);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-latin);
+  background-color: var(--bg-darkest);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.7;
+}
+
+/* Background Atmosphere Layer */
+.ambient-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 15%, #0b1c20 0%, #061013 45%, #030607 100%);
+  transition: background 2s ease;
+}
+
+.ambient-dust-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+/* Main Container & Chapter Layout */
+main {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+}
+
+.chapter {
+  position: relative;
+  min-height: 100vh;
+  padding: 5rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.chapter-inner {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+  position: relative;
+}
+
+/* Header & Audio Bar */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(4, 8, 10, 0.9) 0%, rgba(4, 8, 10, 0) 100%);
+  pointer-events: none;
+}
+
+.site-header-left, .site-header-right {
+  pointer-events: auto;
+}
+
+.header-site-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: var(--font-latin);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.8;
+}
+
+.header-site-title svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--gold-soft);
+}
+
+.audio-control-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  background: rgba(14, 28, 33, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: var(--font-latin);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(8px);
+}
+
+.audio-control-btn:hover, .audio-control-btn:focus-visible {
+  border-color: var(--gold-soft);
+  color: var(--gold-bright);
+  box-shadow: 0 0 12px var(--gold-glow-soft);
+  outline: none;
+}
+
+.audio-control-btn svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Sacred Typography Rules */
+.sacred-arabic {
+  font-family: var(--font-arabic);
+  font-size: 2.1rem;
+  line-height: 2.3;
+  color: var(--gold-bright);
+  direction: rtl;
+  text-align: center;
+  text-shadow: 0 0 25px rgba(230, 184, 92, 0.3);
+  margin: 0.5rem 0;
+  max-width: 95%;
+  word-spacing: 0.15em;
+  letter-spacing: 0.02em;
+}
+
+.sacred-translation {
+  font-family: var(--font-latin);
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  max-width: 620px;
+  line-height: 1.8;
+  margin: 0 auto;
+}
+
+.sacred-transliteration {
+  font-family: var(--font-latin);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-top: -0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.sacred-reference {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-reference);
+  margin-top: 0.4rem;
+}
+
+/* Chapter Transition / Continue Button */
+.continue-nav {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.continue-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-latin);
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  transition: all var(--transition-fast);
+}
+
+.continue-btn:hover, .continue-btn:focus-visible {
+  color: var(--gold-bright);
+  transform: translateY(2px);
+  outline: none;
+}
+
+.continue-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  margin-top: 0.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.continue-btn:hover svg {
+  transform: translateY(3px);
+}
+
+/* ==========================================================================
+   CHAPTER 1: The Opening
+   ========================================================================== */
+#chapter-1 {
+  min-height: 100vh;
+}
+
+.single-lantern-wrap {
+  width: 60px;
+  height: 120px;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.opening-lantern {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(230, 184, 92, 0.4));
+}
+
+.person-identity {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.person-name {
+  font-family: var(--font-latin);
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+}
+
+.person-years {
+  font-family: var(--font-latin);
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   CHAPTER 2: His Portrait
+   ========================================================================== */
+#chapter-2 {
+  min-height: 100vh;
+}
+
+.portrait-container {
+  position: relative;
+  width: 290px;
+  max-width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ambient glow breathing slowly behind the frame */
+.portrait-glow-halo {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  width: 360px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 184, 92, 0.24) 0%, rgba(203, 176, 109, 0.08) 50%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+  animation: halo-breathe 8s ease-in-out infinite;
+}
+
+@keyframes halo-breathe {
+  0%, 100% {
+    transform: translate(-50%, -20%) scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -20%) scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* Mihrab Arch Frame */
+.mihrab-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 10px;
+  background: rgba(8, 18, 22, 0.6);
+  border-radius: 140px 140px 10px 10px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--border-gold);
+}
+
+.mihrab-svg-border {
+  position: absolute;
+  inset: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Portrait Image: strictly still, never animated */
+.portrait-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 130px 130px 6px 6px;
+  border: 1px solid rgba(230, 184, 92, 0.3);
+  background-color: #0c181c;
+}
+
+.portrait-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 503 / 740;
+  object-fit: cover;
+  object-position: center 25%;
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Words below portrait */
+.portrait-tribute-text {
+  margin-top: 1.6rem;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.family-tribute {
+  font-family: var(--font-latin);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.kamran-quote {
+  font-family: var(--font-latin);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   CHAPTER 3: What Remains (Lanterns)
+   ========================================================================== */
+#chapter-3 {
+  min-height: 100vh;
+}
+
+.chapter-prompt {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+
+.lanterns-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 780px;
+  margin: 1.5rem auto;
+}
+
+.lantern-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-night-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  outline: none;
+  position: relative;
+}
+
+.lantern-card:hover {
+  border-color: rgba(230, 184, 92, 0.4);
+  background: var(--bg-night-surface-strong);
+  transform: translateY(-2px);
+}
+
+.lantern-card:focus-visible {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 15px var(--gold-glow);
+}
+
+.lantern-svg-wrap {
+  width: 80px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lantern-svg {
+  width: 100%;
+  height: 100%;
+  transition: filter var(--transition-slow);
+}
+
+/* Lantern Lit State */
+.lantern-card.is-lit {
+  border-color: rgba(230, 184, 92, 0.55);
+  box-shadow: 0 0 35px var(--gold-glow-soft);
+}
+
+.lantern-card.is-lit .lantern-svg {
+  filter: drop-shadow(0 0 18px rgba(230, 184, 92, 0.65));
+}
+
+.lantern-glow-mesh {
+  opacity: 0;
+  transition: opacity 1.5s ease-out;
+}
+
+.lantern-card.is-lit .lantern-glow-mesh {
+  opacity: 1;
+}
+
+.lantern-flame {
+  opacity: 0;
+  transform-origin: center bottom;
+  transform: scale(0.2);
+  transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.17, 0.89, 0.32, 1.28);
+}
+
+.lantern-card.is-lit .lantern-flame {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lantern-info {
+  margin-top: 1.2rem;
+  opacity: 0.35;
+  transition: opacity var(--transition-slow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.lantern-card.is-lit .lantern-info {
+  opacity: 1;
+}
+
+.lantern-title {
+  font-family: var(--font-latin);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--gold-bright);
+}
+
+.lantern-term {
+  font-family: var(--font-latin);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.lantern-detail {
+  font-family: var(--font-latin);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+
+.lantern-tap-hint {
+  font-size: 0.75rem;
+  color: var(--text-reference);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.6rem;
+  transition: opacity 0.5s ease;
+}
+
+.lantern-card.is-lit .lantern-tap-hint {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Revealed Hadith */
+.revealed-hadith-block {
+  width: 100%;
+  max-width: 660px;
+  background: rgba(14, 28, 33, 0.85);
+  border: 1px solid var(--border-gold);
+  border-radius: 12px;
+  padding: 2rem 1.8rem;
+  margin-top: 1.5rem;
+  display: none;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1.4s ease, transform 1.4s ease;
+  box-shadow: 0 0 40px var(--gold-glow-soft);
+}
+
+.revealed-hadith-block.is-visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   CHAPTER 4: Sabr (The Quiet Room)
+   ========================================================================== */
+#chapter-4 {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Geometric Breathing Star */
+.sabr-star-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sabr-star-svg {
+  width: 100%;
+  height: 100%;
+  animation: sabr-breathe 10s ease-in-out infinite;
+}
+
+@keyframes sabr-breathe {
+  0% {
+    transform: scale(0.92) rotate(0deg);
+    opacity: 0.25;
+  }
+  40% {
+    transform: scale(1.08) rotate(15deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.92) rotate(30deg);
+    opacity: 0.25;
+  }
+}
+
+.breathing-cue-text {
+  position: absolute;
+  top: 1.8rem;
+  font-family: var(--font-latin);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-reference);
+  opacity: 0;
+  animation: cue-fade 9s ease-in-out forwards;
+  pointer-events: none;
+}
+
+@keyframes cue-fade {
+  0% { opacity: 0; transform: translateY(-4px); }
+  25% { opacity: 0.85; transform: translateY(0); }
+  75% { opacity: 0.85; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(4px); }
+}
+
+/* Verse Slide Presenter */
+.sabr-stage {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 680px;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.verse-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  width: 100%;
+}
+
+.verse-slide.is-active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Verse 5 (Ibrahim Hadith) Special Prominence */
+.verse-slide.is-ibrahim {
+  padding: 1.5rem 0.5rem;
+}
+
+.verse-slide.is-ibrahim .sacred-arabic {
+  font-size: 1.95rem;
+  line-height: 2.4;
+  color: var(--gold-bright);
+}
+
+.verse-slide.is-ibrahim .sacred-translation {
+  font-size: 1.35rem;
+  max-width: 640px;
+  color: var(--text-primary);
+}
+
+.sabr-nav-controls {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sabr-nav-btn {
+  background: rgba(14, 28, 33, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sabr-nav-btn:hover, .sabr-nav-btn:focus-visible {
+  border-color: var(--gold-soft);
+  color: var(--gold-bright);
+  box-shadow: 0 0 12px var(--gold-glow);
+  outline: none;
+}
+
+.sabr-nav-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.sabr-dots-indicator {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sabr-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(230, 184, 92, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.sabr-dot.is-active {
+  background: var(--gold-bright);
+  box-shadow: 0 0 8px var(--gold-glow);
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   CHAPTER 5: Du'a for Him
+   ========================================================================== */
+#chapter-5 {
+  min-height: 100vh;
+  position: relative;
+}
+
+.dua-sky-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.dua-sky-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dua-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+/* Ameen Button */
+.ameen-button-wrap {
+  position: relative;
+  z-index: 3;
+  margin: 1.6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ameen-button {
+  background: radial-gradient(circle at 50% 40%, rgba(230, 184, 92, 0.22) 0%, rgba(14, 28, 33, 0.9) 70%);
+  border: 1px solid var(--border-gold);
+  border-radius: 999px;
+  padding: 1rem 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: 0 0 25px var(--gold-glow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.ameen-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 223, 148, 0.3) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.ameen-button:hover, .ameen-button:focus-visible {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 40px var(--gold-glow);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.ameen-button:active::before {
+  opacity: 1;
+}
+
+.ameen-arabic-label {
+  font-family: var(--font-arabic);
+  font-size: 1.8rem;
+  color: var(--gold-bright);
+  line-height: 1.3;
+}
+
+.ameen-latin-label {
+  font-family: var(--font-latin);
+  font-size: 1.05rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.ameen-hint {
+  font-size: 0.82rem;
+  color: var(--text-reference);
+  letter-spacing: 0.05em;
+}
+
+.dua-bereaved-divider {
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-gold), transparent);
+  margin: 1.5rem auto;
+}
+
+/* ==========================================================================
+   CHAPTER 6: Dawn
+   ========================================================================== */
+#chapter-6 {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  justify-content: flex-start;
+  padding-top: 6rem;
+  padding-bottom: 7rem;
+  background: linear-gradient(
+    to bottom,
+    var(--dawn-sky-indigo) 0%,
+    var(--dawn-sky-violet) 35%,
+    var(--dawn-sky-mauve) 65%,
+    var(--dawn-sky-amber) 85%,
+    var(--dawn-sky-gold) 100%
+  );
+  transition: background 3s ease;
+}
+
+.kashmir-landscape-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: 280px;
+  max-height: 55vh;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+}
+
+.kashmir-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.dawn-content-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.dawn-closing-card {
+  margin-top: 2rem;
+  padding: 1.8rem;
+  background: rgba(10, 14, 24, 0.6);
+  border: 1px solid rgba(244, 217, 166, 0.25);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 580px;
+}
+
+.dawn-closing-dua {
+  font-family: var(--font-latin);
+  font-size: 1.35rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.kamran-signature {
+  font-family: var(--font-latin);
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  color: var(--gold-soft);
+}
+
+/* ==========================================================================
+   Responsive & Accessibility Rules
+   ========================================================================== */
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  .chapter {
+    padding: 4.5rem 1.2rem 5rem;
+  }
+
+  .sacred-arabic {
+    font-size: 1.75rem;
+    line-height: 2.2;
+  }
+
+  .sacred-translation {
+    font-size: 1.15rem;
+  }
+
+  .portrait-container {
+    width: 250px;
+  }
+
+  .portrait-glow-halo {
+    width: 300px;
+    height: 400px;
+  }
+
+  .lanterns-trio {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .lantern-card {
+    padding: 1.2rem 1rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .lantern-svg-wrap {
+    width: 60px;
+    height: 110px;
+    flex-shrink: 0;
+  }
+
+  .lantern-info {
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .sabr-star-container {
+    width: 320px;
+    height: 320px;
+  }
+
+  .sabr-stage {
+    min-height: 320px;
+  }
+
+  .verse-slide.is-ibrahim .sacred-arabic {
+    font-size: 1.55rem;
+    line-height: 2.1;
+  }
+
+  .verse-slide.is-ibrahim .sacred-translation {
+    font-size: 1.15rem;
+  }
+
+  .dawn-closing-card {
+    padding: 1.4rem 1rem;
+  }
+
+  .dawn-closing-dua {
+    font-size: 1.18rem;
+  }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .portrait-glow-halo {
+    animation: none;
+    transform: translate(-50%, -20%) scale(1);
+    opacity: 0.8;
+  }
+
+  .sabr-star-svg {
+    animation: none;
+    transform: scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+
+  .breathing-cue-text {
+    animation: none;
+    opacity: 0.8;
+  }
+}
